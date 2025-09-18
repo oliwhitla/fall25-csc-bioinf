@@ -38,11 +38,9 @@ Prompt: How to calculate N50?
 
 Prompt: Convert N50 function from python to bash 
 
-Context: could set stack size at 8192000 since os limit are smaller (~64 MB)
+Context: could set stack size at 8192000 since os limit are smaller (~64 MB), also asked a couple follow up questions after the original prompt because I was confused
 
-Prompt: what does this mean: 
-
-(base) oliviawhitelaw@Olivias-Air genome-assembly % ulimit -s 8192000
+Prompt: what does this mean: (base) oliviawhitelaw@Olivias-Air genome-assembly % ulimit -s 8192000
 ulimit: value exceeds hard limit
 
 
