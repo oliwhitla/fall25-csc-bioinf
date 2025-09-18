@@ -35,3 +35,10 @@ At first this completely confused me — I thought I was doing something wrong. 
 Slightly Different Results for Data 1
 
 Another weird thing I noticed: the N50 result for data1 didn’t match exactly between Python and Codon. The difference was small, and the other datasets matched perfectly. My guess is that it’s either randomness in the assembler or small floating-point differences between Python and Codon. Either way, it didn’t seem like a major problem, but it was worth noting.
+
+
+## Bonus BLAST 
+
+Used: https://blast.ncbi.nlm.nih.gov/Blast.cgi
+
+
