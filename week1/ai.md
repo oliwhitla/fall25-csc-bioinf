@@ -27,5 +27,14 @@ data1	python		0:20:00		9118
 data1	codon		0:10:00		9118
 ...
 
+Context: Didn't know what N50 was 
 Prompt: How to calculate N50? 
+Prompt: Convert N50 function from python to bash 
+
+Context: could set stack size at 8192000 since os limit are smaller (~64 MB)
+Prompt: what does this mean: 
+(base) oliviawhitelaw@Olivias-Air genome-assembly % ulimit -s 8192000
+ulimit: value exceeds hard limit
+That’s macOS telling you: “I can’t set the stack size that high (8 GB) because the OS hard limit is much smaller (~64 MB).”
+
 
