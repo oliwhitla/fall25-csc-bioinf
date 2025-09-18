@@ -44,6 +44,15 @@ Steps:
 - uploadt .fasta file
 - run search against nt
 
+Top Blast hits on data 1 - they all map to Porphyromonas gingivalis: 
+
+<img width="1206" height="265" alt="Screenshot 2025-09-17 at 7 51 56 PM" src="https://github.com/user-attachments/assets/9ec01d86-22ae-4c97-a2ca-fb730858f884" />
+
+Top Blast hits on data 2 - they all map to Porphyromonas gingivalis as well: 
+
+<img width="1209" height="206" alt="Screenshot 2025-09-17 at 7 54 05 PM" src="https://github.com/user-attachments/assets/8ac6ef34-0ace-4b86-be48-d6249201a4f6" />
+
+Top blast hits on data 3 - 
 
 
 
