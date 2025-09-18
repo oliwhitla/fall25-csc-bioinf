@@ -1,18 +1,3 @@
-### Steps Taken 
-
-1- cloning the repo was no problem, initially there was a little confusing on what values should be reproduced 
-
-2- adapting code to run in a codon environment was not difficult once I was able to pinpoint what was causing the errors 
-
-3- writing the evaluate.sh script proved to be the hardest part because I'd never done anything like this before and I wasn't used to bash scrition and didn't know how to wright the n50 function 
-
-My biggest gotcha was that macOS hard-caps stack size at 64 MB so I would always see: 
-ulimit: value exceeds hard limit 
-I was confused until I realized why .. insert explanation 
-
-An other things is there is a different data 1 result. Not exactly sure why but I think it might be random 
-
-
 
 ## Steps Taken
 ### 1. Cloning the Repository
