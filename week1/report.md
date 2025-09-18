@@ -40,5 +40,10 @@ Another weird thing I noticed: the N50 result for data1 didn’t match exactly b
 ## Bonus BLAST 
 
 Used: https://blast.ncbi.nlm.nih.gov/Blast.cgi
+Steps: 
+- uploadt .fasta file
+- run search against nt
+
+
 
 
