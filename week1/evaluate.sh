@@ -59,7 +59,7 @@ for i in 1 2 3 4; do
 
   # raise stack limit, my laptop can't handle this so it just outputs message below
   if [[ "$ds" == "week1/data/data4" ]]; then
-    ulimit -s 8192000 2>/dev/null || echo "⚠️ Could not raise stack size" >&2
+    ulimit -s 8192000 2>/dev/null || echo "Could not raise stack size" >&2
   fi
 
   # python
