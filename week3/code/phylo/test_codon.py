@@ -10,28 +10,6 @@ from numpy import ndarray, array, zeros, ones, full, float32, float64, int32, ui
 from typing import List, Optional
 
 
-# ***** Need to change this ASAP
-def get_distances() -> ndarray:
-    distances_list: List[List[int]] = []
-    with open("../../data/sequence/distances.txt", "r") as file:
-        for line in file:
-            line = line.strip()
-            if line:
-                row: List[int] = [int(x) for x in line.split()]
-                distances_list.append(row)
-    
-    # Convert to numpy array
-    n: int = len(distances_list)
-    m: int = len(distances_list[0]) if n > 0 else 0
-    result = zeros((n, m), dtype=int32)
-    
-    for i in range(n):
-        for j in range(m):
-            result[i, j] = int32(distances_list[i][j])
-    
-    return result
-
-
 
 def get_upgma_newick() -> str:
     with open("../../data/sequence/newick_upgma.txt", "r") as file:
@@ -41,6 +19,27 @@ def get_upgma_newick() -> str:
 
 def get_tree(distances: ndarray) -> Tree:
     return upgma(distances)
+
+
+
+def get_distances() -> ndarray:
+    distances_list: List[List[int]] = []
+    with open("../../data/sequence/distances.txt", "r") as file:
+        for line in file:
+            line = line.strip()
+            if line:
+                row: List[int] = [int(x) for x in line.split()]
+                distances_list.append(row)
+
+    m: int = len(distances_list[0]) if n > 0 else 0
+    result = zeros((n, m), dtype=int32)
+    n: int = len(distances_list)
+    
+    for i in range(n):
+        for j in range(m):
+            result[i, j] = int32(distances_list[i][j])
+    
+    return result
 
 
 
