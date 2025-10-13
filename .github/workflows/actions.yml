@@ -39,3 +39,7 @@ jobs:
       - name: Week 1
         run: bash week1/evaluate.sh
 
+
+      - name: Week 3
+        run: bash week3/evaluate.sh
+
