@@ -21,25 +21,26 @@ def get_tree(distances: ndarray) -> Tree:
     return upgma(distances)
 
 
-
 def get_distances() -> ndarray:
-    distances_list: List[List[int]] = []
-    with open("../../data/sequence/distances.txt", "r") as file:
-        for line in file:
-            line = line.strip()
-            if line:
-                row: List[int] = [int(x) for x in line.split()]
-                distances_list.append(row)
+    rows: List[List[int]] = []
+    with open("../../data/sequence/distances.txt", "r") as fh:
+        for ln in fh:
+            s = ln.strip()
+            if not s:
+                continue
+            rows.append([int(tok) for tok in s.split()])
 
-    m: int = len(distances_list[0]) if n > 0 else 0
-    result = zeros((n, m), dtype=int32)
-    n: int = len(distances_list)
-    
-    for i in range(n):
-        for j in range(m):
-            result[i, j] = int32(distances_list[i][j])
-    
-    return result
+    # Build an int32 numpy array with the parsed shape
+    n = len(rows)
+    m = len(rows[0]) if n else 0
+    mat = zeros((n, m), dtype=int32)
+
+    for r in range(n):
+        vals = rows[r]
+        for c in range(m):
+            mat[r, c] = int32(vals[c])
+
+    return mat
 
 
 
