@@ -1,3 +1,7 @@
+1) distutils removed in Python 3.12+
+Easiest: pin CI to Python 3.11 (see above), or
+
+
 The handout suggested loading distances.txt via the Python bridge:
 
 ```
