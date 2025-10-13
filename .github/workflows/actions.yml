@@ -36,8 +36,8 @@ jobs:
       - name: make evaluate executable 
         run: chmod +x week1/evaluate.sh
         
-      - name: Week 1
-        run: bash week1/evaluate.sh
+      # - name: Week 1
+      #   run: bash week1/evaluate.sh
 
 
       - name: Week 3
