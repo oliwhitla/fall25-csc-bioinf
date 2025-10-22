@@ -264,7 +264,7 @@ if __name__ == "__main__":
 
                 elapsed = time.time() - start
                 elapsed_ms = elapsed * 1000
-                # elapsed_ms = (time.time() - start) * 1000
+
                 # main output 
                 print(f"{method_name + '-' + name:<20} {'python':<12} {elapsed_ms:7.2f}")
 
