@@ -1,23 +1,23 @@
 Model ChatGPT: 5
 
-### Walk through for aligning algorithm functions
+## Walk through for aligning algorithm functions
 
-'''
+
 How the scoring matrix is filled and how gaps or mismatches are handled in each case?
 
 Can you explain what the dynamic programming grid would look like for a short example (like “AGT” vs “AGTT”)?
 
-'''
 
-### Performance insights
-'''
+
+## Performance insights
+
 My mt_human × mt_orang test takes a long time to run, especially with affine gaps.
-'''
 
 
-### The following is the prompt I use to convert my python code to codon: 
 
-'''
+### Converting Python -> Codon: 
+
+
 You are an expert Codon language programmer. Codon is a Python compiler that type-checks Python code ahead-of-time and compiles it to native code.
 
 Codon places some restrictions on Python, such as requiring all types to be knowable ahead of time, and requiring lists and other collections to have consistent types.
@@ -47,4 +47,4 @@ Do not use the os module
 Fix the following code to be compilable with Codon, and provide an explanation of changes made. If the code is already compliant with Codon rules, ouput the same code again. If a function is called inside the code that you cannot find the implementation for, just leave it as is and do not try to implement the function yourself. Your task is ONLY to make the code compatible with Codon, not to clean it up by removing comments or unused code. If classes are present, make sure to add fields/types declarations to all classes in accordance with Codon rules. Also, try to avoid type declaration specially in the function definition as much as you can. Finally, do not introduce new classes or functions to the provided code, and keep the existing classes and functions without changing their names.
 
 Code: 
-'''
+
