@@ -277,10 +277,6 @@ if __name__ == "__main__":
     # run all tests
     for name, (s1, s2) in tests.items():
 
-        # temp
-        if name == "mt_human":   # skip that pair for now
-            continue
-
         for method_name in methods:
 
             # super redundant but I won't do anything about it 
