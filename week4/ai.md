@@ -15,7 +15,7 @@ My mt_human × mt_orang test takes a long time to run, especially with affine ga
 
 
 
-### Converting Python -> Codon: 
+## Converting Python -> Codon: 
 
 
 You are an expert Codon language programmer. Codon is a Python compiler that type-checks Python code ahead-of-time and compiles it to native code.
