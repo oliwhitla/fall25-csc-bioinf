@@ -262,6 +262,31 @@ if __name__ == "__main__":
     # print(qs["q2"])
     # print(ts["t5"])
 
+    # redundant
+    start = time.time()
+    result = score.global_alignment(MT_human, MT_orang)
+
+    elapsed = time.time() - start
+    elapsed_ms = elapsed * 1000
+    # main output 
+    print(f"{'global' + '-' + 'mt_human':<20} {'codon':<12} {elapsed_ms:7.2f}")
+
+    start = time.time()
+    result = score.local_alignment(MT_human, MT_orang)
+
+    elapsed = time.time() - start
+    elapsed_ms = elapsed * 1000
+    # main output 
+    print(f"{'local' + '-' + 'mt_human':<20} {'codon':<12} {elapsed_ms:7.2f}")
+
+    start = time.time()
+    result = score.semi_global_alignment(MT_human, MT_orang)
+
+    elapsed = time.time() - start
+    elapsed_ms = elapsed * 1000
+    # main output 
+    print(f"{'semi-global' + '-' + 'mt_human':<20} {'codon':<12} {elapsed_ms:7.2f}")
+
     tests = {
         "q1": (qs["q1"], ts["t1"]),
         "q2": (qs["q2"], ts["t2"]),
