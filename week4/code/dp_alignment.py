@@ -250,9 +250,24 @@ if __name__ == "__main__":
 
     elapsed = time.time() - start
     elapsed_ms = elapsed * 1000
-    # elapsed_ms = (time.time() - start) * 1000
     # main output 
     print(f"{'global' + '-' + 'mt_human':<20} {'python':<12} {elapsed_ms:7.2f}")
+
+    start = time.time()
+    result = score.local_alignment(MT_human, MT_orang)
+
+    elapsed = time.time() - start
+    elapsed_ms = elapsed * 1000
+    # main output 
+    print(f"{'local' + '-' + 'mt_human':<20} {'python':<12} {elapsed_ms:7.2f}")
+
+    start = time.time()
+    result = score.semi_global_alignment(MT_human, MT_orang)
+
+    elapsed = time.time() - start
+    elapsed_ms = elapsed * 1000
+    # main output 
+    print(f"{'semi-global' + '-' + 'mt_human':<20} {'python':<12} {elapsed_ms:7.2f}")
 
     # methods to test
     methods = {
