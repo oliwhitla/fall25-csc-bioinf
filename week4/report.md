@@ -3,7 +3,7 @@
 ## Overview
 
 Project: Implementing and benchmarking four sequence-alignment algorithms:
-'''
+
 
 - Global (Needleman–Wunsch)
 
@@ -13,11 +13,11 @@ Project: Implementing and benchmarking four sequence-alignment algorithms:
 
 - Affine-gap Global alignment
 
-'''
+
 
 ## Implementation Notes
 
-'''
+
 
 - I used a single Align class containing all four algorithms
 
@@ -27,13 +27,13 @@ Project: Implementing and benchmarking four sequence-alignment algorithms:
 
 - I rounded runtimes to two decimal places instead of integers, since most runs complete within a few milliseconds; rounding to whole numbers produced mostly zeros
   
-'''
+
 
 ## Problems
 
 ### Why Affine Was Skipped for MT_human
 
-'''
+
 
 The affine-gap version maintains three DP matrices
 
@@ -44,7 +44,7 @@ The GitHub CLI runner has limited memory and running affine alignment on MT_huma
 I ran only the Global, Local, and Semi-Global alignments for the MT_human and MT_orang pair,
 and skipped the Affine version for that case
 
-'''
+
 
 ## Time spent
 
