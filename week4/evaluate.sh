@@ -1,14 +1,17 @@
 #!/bin/bash
 set -euo pipefail
 
-# Ensure Codon is on PATH (same as your week3 script)
+# add codon to path 
+export PATH="${PATH}:${HOME}/.codon/bin"
+
+# Put codon on PATH if you need it
 export PATH="${HOME}/.codon/bin:$PATH"
 export LC_ALL=C
 export LANG=C
 
-# --- resolve paths robustly ---
+
 SCRIPT_DIR="$(cd -- "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
-CODE_DIR="${SCRIPT_DIR}/code"
+CODE_DIR="${SCRIPT_DIR}/code/"   
 
 if [[ ! -d "$CODE_DIR" ]]; then
   echo "ERROR: code directory not found at $CODE_DIR" >&2
@@ -23,14 +26,8 @@ rm -f python_results.txt codon_results.txt combined_results.txt
 # Run Python version
 python3 dp_alignment.py > python_results.txt
 
-# Build & run Codon version (only if codon exists)
-if command -v codon >/dev/null 2>&1; then
-  codon build -release dp_alignment_codon.py -o align_codon_exec
-  ./align_codon_exec > codon_results.txt
-else
-  echo "[warn] Codon not found; writing placeholders." >&2
-  awk '{print "Codon\tN/A\tN/A"}' python_results.txt > codon_results.txt
-fi
+# run codon
+codon run dp_alignment_codon.py > codon_results.txt
 
 # Merge results alternately (python line, then codon line)
 paste -d $'\n' python_results.txt codon_results.txt > combined_results.txt
