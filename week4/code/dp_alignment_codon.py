@@ -267,9 +267,7 @@ if __name__ == "__main__":
         "q2": (qs["q2"], ts["t2"]),
         "q3": (qs["q3"], ts["t3"]),
         "q4": (qs["q4"], ts["t4"]),
-        "q5": (qs["q5"], ts["t5"]),
-        "mt_human": (MT_human, MT_orang),
-    }
+        "q5": (qs["q5"], ts["t5"])}
 
     # methods to test
     methods = ["global", "local", "semi-global", "affine"]
