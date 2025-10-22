@@ -39,13 +39,13 @@ jobs:
       # - name: Week 1
       #   run: bash week1/evaluate.sh
 
-      # - run: python -m pip install "numpy>=2.1"
-      # - name: Week 3
-      #   run: bash week3/evaluate.sh
+      - run: python -m pip install "numpy>=2.1"
+      - name: Week 3
+        run: bash week3/evaluate.sh
       
-      - name: make evaluate executable week4
-        run: chmod +x week4/evaluate.sh
+      # - name: make evaluate executable week4
+      #   run: chmod +x week4/evaluate.sh
         
-      - name: Week 4
-        run: bash week4/evaluate.sh
+      # - name: Week 4
+      #   run: bash week4/evaluate.sh
 
