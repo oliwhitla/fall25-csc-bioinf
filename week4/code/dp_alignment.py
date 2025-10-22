@@ -242,8 +242,17 @@ if __name__ == "__main__":
     "q2": (qs["q2"], ts["t2"]),
     "q3": (qs["q3"], ts["t3"]),
     "q4": (qs["q4"], ts["t4"]),
-    "q5": (qs["q5"], ts["t5"]),
-    "mt_human": (MT_human, MT_orang)}   
+    "q5": (qs["q5"], ts["t5"])}
+
+    # redundant
+    start = time.time()
+    result = score.global_alignment(MT_human, MT_orang)
+
+    elapsed = time.time() - start
+    elapsed_ms = elapsed * 1000
+    # elapsed_ms = (time.time() - start) * 1000
+    # main output 
+    print(f"{'global' + '-' + 'mt_human':<20} {'python':<12} {elapsed_ms:7.2f}")
 
     # methods to test
     methods = {
