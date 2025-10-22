@@ -256,10 +256,6 @@ if __name__ == "__main__":
     # run all tests
     for name, (s1, s2) in tests.items():
 
-        # erase when submittingl
-        if name == "mt_human": 
-            continue
-
         for method_name, func in methods.items():
             
             try:
