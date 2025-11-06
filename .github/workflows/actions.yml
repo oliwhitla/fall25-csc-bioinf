@@ -35,21 +35,48 @@ jobs:
           python -m pip install --upgrade pip
           pip install numpy biopython pytest jupyter nbconvert nbclient pandas ipykernel
 
+      # - name: Install bioinformatics tools via conda
+      #   run: |
+      #     wget https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Linux-x86_64.sh
+      #     bash Miniforge3-Linux-x86_64.sh -b -p $HOME/miniforge3
+      #     source $HOME/miniforge3/etc/profile.d/conda.sh
+      #     conda activate base
+          
+      #     # install everything in one go
+      #     conda install -c bioconda -y samtools bcftools tabix minimap2 hapcut2 htslib
+          
+      #     # verify
+      #     echo "=== Checking installed tools ==="
+      #     for tool in bcftools samtools tabix minimap2 HAPCUT2 extractHAIRS; do
+      #       which $tool || echo "⚠ $tool not found"
+      #     done
+
       - name: Install bioinformatics tools via conda
         run: |
+          # Install Miniforge (lightweight conda)
           wget https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Linux-x86_64.sh
           bash Miniforge3-Linux-x86_64.sh -b -p $HOME/miniforge3
           source $HOME/miniforge3/etc/profile.d/conda.sh
           conda activate base
-          
-          # install everything in one go
-          conda install -c bioconda -y samtools bcftools tabix minimap2 hapcut2 htslib
-          
-          # verify
+      
+          # Install core bioinformatics tools (excluding minimap2)
+          conda install -c bioconda -y samtools bcftools tabix hapcut2 htslib
+      
+          # Install minimap2 manually (latest precompiled binary)
+          wget https://github.com/lh3/minimap2/releases/download/v2.26/minimap2-2.26_x64-linux.tar.bz2
+          tar -xjf minimap2-2.26_x64-linux.tar.bz2
+          sudo cp minimap2-2.26_x64-linux/minimap2 /usr/local/bin/
+          minimap2 --version
+      
+          # Add conda binaries to PATH for later steps
+          echo "$HOME/miniforge3/bin" >> $GITHUB_PATH
+      
+          # Verify all installations
           echo "=== Checking installed tools ==="
           for tool in bcftools samtools tabix minimap2 HAPCUT2 extractHAIRS; do
             which $tool || echo "⚠ $tool not found"
           done
+
 
       
       - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
