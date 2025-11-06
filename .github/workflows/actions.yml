@@ -66,3 +66,6 @@ jobs:
       # - name: Week 4
       #   run: bash week4/evaluate.sh
 
+      - name: Week5
+        run: jupyter execute week5/week5.ipynb
+
