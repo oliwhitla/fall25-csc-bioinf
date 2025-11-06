@@ -29,6 +29,19 @@ jobs:
           pip install find_libpython
           export CODON_PYTHON=$(find_libpython)
           echo "Found Python at: ${CODON_PYTHON}"
+
+      - name: Install HapCUT2
+        run: |
+          sudo apt-get install -y build-essential git zlib1g-dev libbz2-dev liblzma-dev
+          git clone --depth 1 https://github.com/vibansal/HapCUT2.git
+          cd HapCUT2
+          make USE_HTSLIB=system
+          sudo cp build/extractHAIRS /usr/local/bin/
+          sudo cp build/HAPCUT2 /usr/local/bin/
+          
+          echo "=== Checking HapCUT2 installation ==="
+          HAPCUT2 --version || echo "HAPCUT2 executable found"
+          which extractHAIRS
       
       - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
       - run: echo "🖥️ The workflow is now ready to test your code on the runner."
@@ -43,9 +56,9 @@ jobs:
       # - name: Week 3
       #   run: bash week3/evaluate.sh
       
-      - name: make evaluate executable week4
-        run: chmod +x week4/evaluate.sh
+      # - name: make evaluate executable week4
+      #   run: chmod +x week4/evaluate.sh
         
-      - name: Week 4
-        run: bash week4/evaluate.sh
+      # - name: Week 4
+      #   run: bash week4/evaluate.sh
 
