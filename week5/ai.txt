@@ -1,1 +1,12 @@
+Model: Chat GPT 5
 
+- Understand how to use **bcftools**, **IGV**, and **VCF/BAM file interpretation**.
+- Fix command errors (non-zero exit codes from `subprocess.run` and missing input paths).
+- Rewrite the `get_phased_calls()` function to correctly parse genotypes using `bcftools view -H`.
+- Implement helper functions for counting variants per haplotype and summarizing diplotypes.
+
+AI explanations helped clarify how the **phased genotypes (0|1, 1|0)** indicate which allele carries the variant, how to interpret discordant results in **IGV**, and how to check for non-common variants using coordinates from the PharmVar star-allele database.
+
+> “How do I know which variants are common vs. non-common when selecting for analysis?”
+> “What does ‘0|1’ vs ‘1|0’ mean in the GT field of a VCF file?”  
+> “How do I tell if a missing variant is due to alignment issues or the reference build mismatch?”  
