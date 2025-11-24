@@ -81,9 +81,16 @@ jobs:
       - name: Install conda dependencies
         shell: bash -l {0}
         run: |
-          conda install -y -c bioconda simpleaf
-          conda install -y -c conda-forge scanpy celltypist mygene \
-          numpy pandas scipy matplotlib seaborn umap-learn igraph leidenalg
+          conda install -y -c bioconda salmon alevin-fry
+          conda install -y -c conda-forge scanpy
+
+      - name: Install Python dependencies
+        shell: bash -l {0}
+        run: |
+          pip install celltypist mygene
+          pip install jupyter nbconvert nbclient ipykernel
+          pip install numpy pandas scipy matplotlib seaborn
+          pip install igraph leidenalg umap-learn
 
 
 
