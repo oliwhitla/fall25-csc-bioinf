@@ -118,3 +118,6 @@ jobs:
       # - name: Week5
       #   run: jupyter execute week5/week5.ipynb
 
+      - name: Week6
+        run: jupyter execute week6/week6.ipynb --inplace
+
